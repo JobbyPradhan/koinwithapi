@@ -10,7 +10,7 @@ import org.koin.dsl.bind
 import org.koin.dsl.module
 
 val appModule = module {
-    factory { ApiServiceImpl() } bind ApiService::class
+    single { ApiServiceImpl() } bind ApiService::class
     //single { PostAdapter }
     single { PostRepository(get()) }
     viewModel { MainViewModel(get()) }
